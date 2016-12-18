@@ -8,7 +8,7 @@
 
 
 ### Training Data:
-I first started by generating training data on my own and trying to train a model on it. After about 10 hours of fruitless effort effort, I realized that the data I created wasn't normally distributed due to the fact that I trained the model with keyboard input.
+I first started by generating training data on my own and trying to train a model on it. After about 10 hours of fruitless effort, I realized that the data I created wasn't normally distributed due to the fact that I trained the model with keyboard input.
 Once Udacity released their training data, I compared the distributions and the following is the output:
 
 
@@ -53,16 +53,16 @@ plt.show()
 ![png](output_3_0.png)
 
 
-I obviosly decided to use Udacity's training data for my model.
+I obviously decided to use Udacity's training data for my model.
 
 ## Image processing
 
-The goal of image processing was to remove unnecessary data from the image in order to let the model focous on relevant features, while keeping away from computer vision.
+The goal of image processing was to remove unnecessary data from the image in order to let the model focus on relevant features, while keeping away from computer vision.
 
 The images are processed in 3 steps:
 
-1) Trimming the image - romoving the top 40 pixels from the image since that is alwas clouds and trees.    
-2) Resize the image to half it's size.     
+1) Trimming the image - removing the top 40 pixels from the image since that is alwas clouds and trees.    
+2) Resize the image to half its size.     
 3) convert the image from RGB to YUV - converting it to YUV was the easiest way to romove unnecessary noise from the image.
 
 Below is a sample of the image processing:
@@ -100,7 +100,7 @@ fig = plt.gcf().set_size_inches(18.5, 8, forward=True)
 
 ## Recovery data
 
-After traing the model on the udacity's training data, My model performed well but had no means of recovery. I decided to add recovery data to the udacity training data.
+After training the model on the udacity's training data, My model performed well but had no means of recovery. I decided to add recovery data to the udacity training data.
 
 Below is a video of the recovery data I added:
 
@@ -143,7 +143,7 @@ HTML("""
 
 ## Network Architecture:
 
-I started off using the nvides network architecture discribed in [this paper](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) and revised it numerous times in order to get the desired output.
+I started off using the nvidia network architecture described in [this paper](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) and revised it numerous times in order to get the desired output.
 
 
 My final network architecture is as follows:
