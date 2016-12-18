@@ -139,7 +139,7 @@ HTML("""
 </video>
 
 
-
+(see recovery.mp4 in the current directory)
 
 ## Network Architecture:
 
@@ -160,7 +160,7 @@ SVG(model_to_dot(model, show_layer_names =False,show_shapes =True).create(prog='
 
 ![svg](output_10_0.svg)
 
-
+(see svg in current directory)
 
 
 The layer's width is based off nvidia's model (1164 => 100 => 50 => 10).
