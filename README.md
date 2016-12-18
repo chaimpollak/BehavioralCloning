@@ -61,9 +61,9 @@ The goal of image processing was to remove unnecessary data from the image in or
 
 The images are processed in 3 steps:
 
-1) Trimming the image - removing the top 40 pixels from the image since that is alwas clouds and trees.    
+1) Trimming the image - removing the top 40 pixels from the image since that is always clouds and trees.    
 2) Resize the image to half its size.     
-3) convert the image from RGB to YUV - converting it to YUV was the easiest way to romove unnecessary noise from the image.
+3) convert the image from RGB to YUV - converting it to YUV was the easiest way to remove unnecessary noise from the image.
 
 Below is a sample of the image processing:
 
@@ -143,7 +143,7 @@ HTML("""
 
 ## Network Architecture:
 
-I started off using the nvidia network architecture described in [this paper](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) and revised it numerous times in order to get the desired output.
+I started off using the NVIDIA network architecture described in [this paper](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) and revised it numerous times in order to get the desired output.
 
 
 My final network architecture is as follows:
@@ -163,11 +163,11 @@ SVG(model_to_dot(model, show_layer_names =False,show_shapes =True).create(prog='
 (see svg in current directory)
 
 
-The layer's width is based off nvidia's model (1164 => 100 => 50 => 10).
+The layer's width is based off NVIDIA's model (1164 => 100 => 50 => 10).
 
 I used ELU based off of a paper I read from [commaai]( https://github.com/commaai/research/blob/master/train_steering_model.py) why they used ELU in their steering angle prediction and I added some dropouts, convnets and maxpooling via fine tuning over multiple iterations.
 
-The optimizer chosen for this model was the Adam optimizer. I played around with many different learning rates for the adam optimizer and concluded that the default learning rate (0.001) was the most suitable for this problem.
+The optimizer chosen for this model was the Adam optimizer. I played around with many different learning rates for the Adam optimizer and concluded that the default learning rate (0.001) was the most suitable for this problem.
 
 My goal was to get the loss value of all datasets (train, validation, and test) below 0.025 and after 10 epoch's I finally got the desired output:
 
